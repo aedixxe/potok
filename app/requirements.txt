@@ -1,0 +1,27 @@
+# Поток — push-to-talk диктовщик (GigaAM-v3). Python >= 3.11
+#
+# ASR-рантайм (CPU по умолчанию):
+onnx-asr[hub]
+onnxruntime           # CPU. Для GPU: удалить эту строку и поставить onnxruntime-gpu (см. README)
+
+# VAD для нарезки длинной речи: silero v5 в ONNX (ptt/assets/silero_vad.onnx),
+# гоняется через onnxruntime — без torch. Отдельный пакет не нужен.
+
+# Захват аудио и работа с wav:
+sounddevice
+soundfile
+
+# Глобальный хоткей и эмуляция вставки:
+pynput
+
+# Трей и иконка:
+pystray
+Pillow
+
+# Плавающий оверлей записи (acrylic-блюр + барная волна):
+PySide6
+
+# Буфер обмена:
+pyperclip
+
+# Python 3.11+ (используется встроенный tomllib).

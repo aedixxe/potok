@@ -1,0 +1,29 @@
+# Пример конфига ptt. Скопируй в config.toml рядом с местом запуска и правь под себя.
+
+# --- Хоткей и режим ---
+hotkey = "ctrl+space"    # клавиша ("ctrl_r", "f9") или комбо ("ctrl+space", "ctrl+shift+f9")
+mode = "hold"            # "hold" (зажать-говорить) или "toggle" (старт/стоп)
+
+# --- ASR ---
+model_name = "gigaam-v3-e2e-rnnt"
+provider = "cpu"         # "cpu" (дефолт) или "cuda" (нужен onnxruntime-gpu)
+model_dir = ""           # пусто → onnx-asr скачает веса с HuggingFace; или путь к локальным весам
+
+# --- Аудио ---
+sample_rate = 16000      # не менять: требование GigaAM-v3
+# input_device =         # индекс устройства (см. README); пусто → системное по умолчанию
+
+# --- Вставка текста ---
+paste_method = "type"        # "type" — печать символами (работает в VS Code/webview/браузере);
+                             # "paste" — буфер обмена + Ctrl/Cmd+V (быстрее для длинного текста)
+paste_restore_delay = 0.25   # сек до восстановления буфера (только для method = "paste")
+auto_paste = true            # false → только класть в буфер (вставлять самому Ctrl/Cmd+V)
+append_space = true          # добавлять пробел в конце фразы, чтобы соседние надиктовки не слипались
+
+# --- Постобработка ---
+filler_filter = true         # вырезать заминки-паразиты («э-э-э», «ммм», «эм», «кхм»)
+it_dictionary = true         # канонизировать IT-термины (FastAPI, GitLab, Docker, CI/CD…)
+
+# --- VAD / длинная речь ---
+vad_enabled = true
+max_segment_sec = 24.0   # < 25: лимит одного вызова GigaAM

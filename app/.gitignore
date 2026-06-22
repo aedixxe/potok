@@ -1,0 +1,18 @@
+# venv и кэши
+.venv/
+__pycache__/
+*.pyc
+
+# личный конфиг пользователя (в релиз идёт только config.example.toml)
+config.toml
+
+# вшиваемые веса модели (~226 МБ, не в git — кладутся в бандл при сборке)
+models/
+
+# сборка PyInstaller
+build/
+dist/
+*.spec.bak
+
+# логи
+*.log
