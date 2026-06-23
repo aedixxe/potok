@@ -7,7 +7,6 @@
 
   [![Версия](https://img.shields.io/badge/версия-1.0.0-5f8cff)](../../releases)
   [![Платформа](https://img.shields.io/badge/Windows-10%2F11-0a7bd1)](#установка)
-  [![Лицензия](https://img.shields.io/badge/лицензия-проприетарная-7c4dff)](LICENSE)
   [![Telegram](https://img.shields.io/badge/Telegram-%40exxidea-229ed9?logo=telegram&logoColor=white)](https://t.me/exxidea)
 </div>
 
